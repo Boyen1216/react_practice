@@ -3,7 +3,7 @@ import JsxValue from './ex-1026-1/JsxValue'
 import Counter from './ex-1025-2/Counter'
 import StudentList from './ex-1026-2/StudentList'
 import Demo from './ex-1026-3/Demo'
-import Menu from './practice-menu/Menu'
+// import Menu from './practice-menu/Menu'
 
 // 1027
 import Parent from './ex-1027-1/Parent'
@@ -17,8 +17,20 @@ import HTML5Form from './ex-1028-2/HTML5Form'
 
 // 1031
 import BMI from './ex-1031-1/BMI'
+import BirthSelect from './ex-1031-2/BirthSelect'
+import TodoApp from './ex-1031-3/TodoApp_final'
 
 export const examples = [
+  {
+    name: '1031-3 Todo待辨事項',
+    path: '/ex-1031-3/TodoApp_final.js',
+    component: TodoApp,
+  },
+  {
+    name: '1031-2 出生年月日下拉選單',
+    path: '/ex-1031-2/BirthSelect.js',
+    component: BirthSelect,
+  },
   {
     name: '1031-1 BMI線上計算表單',
     path: '/ex-1031-1/BMI.js',
@@ -49,11 +61,11 @@ export const examples = [
     path: '/ex-1027-1/Parent.js',
     component: Parent,
   },
-  {
-    name: '1026 練習題-選單項目狀態',
-    path: './practice-menu/Menu.js',
-    component: Menu,
-  },
+  // {
+  //   name: '1026 練習題-選單項目狀態',
+  //   path: './practice-menu/Menu.js',
+  //   component: Menu,
+  // },
   {
     name: '1026-3 物件陣列狀態處理練習',
     path: '/ex-1026-3/Demo.js',
