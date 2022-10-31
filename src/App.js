@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { examples } from './examples'
+import { useState } from 'react'
 
 function App() {
+  //記錄選中的索引值，資料為數字資料類型
+  const [displayIndex, setDisplayIndex] = useState(0)
+
+  const selection = (
+    <select
+      value={displayIndex}
+      onChange={(e) => {
+        // 注意要轉資料類型，保持state資料類型一致
+        setDisplayIndex(Number(e.target.value))
+      }}
+    >
+      {examples.map((v, i) => {
+        return (
+          <option key={i} value={i}>
+            {v.name}
+          </option>
+        )
+      })}
+    </select>
+  )
+
+  // 動態元件語法，注意命名開頭英文一定要大寫
+  const MyComponent = examples[displayIndex].component
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {selection}
+      <p>元件檔案路徑: {examples[displayIndex].path}</p>
+      <hr />
+      <MyComponent />
+    </>
+  )
 }
 
-export default App;
+export default App
